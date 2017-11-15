@@ -10,7 +10,13 @@
         android:layout_height="wrap_content"
         android:text="@string/key_desc"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/blue" />
+        android:textColor="@color/white" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/key_list"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/key_text"

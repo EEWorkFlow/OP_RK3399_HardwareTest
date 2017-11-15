@@ -65,7 +65,8 @@
 
     <!-- key -->
     <string name="key_title">"按键测试"</string>
-    <string name="key_desc">"下面将显示的是你按下的按键，请确认是否有如下按键被截获，KEYCODE_BACK，KEYCODE_VOLUME_DOWN，KEYCODE_VOLUME_UP"</string>
+    <string name="key_desc">"下面将显示的是你按下的按键，请确认是否有如下按键被截获:"</string>
+    <string name="key_list">"KEYCODE_F1，KEYCODE_BACK，KEYCODE_VOLUME_DOWN，KEYCODE_VOLUME_UP"</string>
 
     <!-- vibrator -->
     <string name="vibrator_title">"震动测试"</string>

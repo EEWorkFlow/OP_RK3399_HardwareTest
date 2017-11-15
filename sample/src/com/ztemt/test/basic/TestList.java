@@ -50,11 +50,11 @@ public class TestList {
         //耳机测试
         //new EarphoneTest(), //带Mic的四段式耳机回环测试
         new EarphoneTest2(), //普通耳机测试
-/*
         //FM收音机
         //new FmRadioTest(),
         //按键测试
         new KeyTest(),
+/*
         //震动测试
         //new VibratorTest(),
         //存储卡
