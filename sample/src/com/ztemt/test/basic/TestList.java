@@ -8,6 +8,7 @@ import com.ztemt.test.basic.item.BoardInfoTest;
 import com.ztemt.test.basic.item.EarphoneTest2;
 import com.ztemt.test.basic.item.GSensorTest;
 import com.ztemt.test.basic.item.GyroSensorTest;
+import com.ztemt.test.basic.item.HallSensorTest;
 import com.ztemt.test.basic.item.KeyTest;
 import com.ztemt.test.basic.item.LCDTest;
 import com.ztemt.test.basic.item.LightSensorCM32181Test;
@@ -54,6 +55,8 @@ import com.ztemt.test.basic.item.VersionTest;
         new GyroSensorTest(),
         //LightSensor IIO Sensor CM32181
         new LightSensorCM32181Test(),
+        // Hall Sensor
+        new HallSensorTest(),
 /*
         //存储卡
         new StorageTest(),

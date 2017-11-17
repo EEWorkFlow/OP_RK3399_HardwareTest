@@ -3,4 +3,30 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/hallsensor_desc1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hallsensor_desc1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/hallsensor_iv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/hallsensor"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/hallsensor_desc2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hallsensor_desc2"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+
+
 </LinearLayout>

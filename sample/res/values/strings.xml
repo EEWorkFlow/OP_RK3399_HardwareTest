@@ -149,6 +149,11 @@
     <string name="lightsensor_level_3">"级别3：1000 &lt; X"</string>
     <string name="lightsensor_signal">"实时值：%1$d"</string>
 
+    <!-- hallsensor -->
+    <string name="hallsensor_title">"霍尔元件测试"</string>
+    <string name="hallsensor_desc1">"请将磁铁慢慢靠近以下区域，观察机器是否进入休眠。"</string>
+    <string name="hallsensor_desc2">"3秒后将磁铁拿开，观察机器是否被唤醒。"</string>
+
     <!-- nfc -->
     <string name="nfc_title">"NFC测试"</string>
     <string name="nfc_turn_on">"请开启NFC后再测试"</string>
