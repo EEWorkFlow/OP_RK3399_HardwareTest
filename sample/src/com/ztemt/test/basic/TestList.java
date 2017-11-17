@@ -5,31 +5,20 @@ import android.content.Context;
 import com.ztemt.test.basic.item.BacklightTest;
 import com.ztemt.test.basic.item.BaseTest;
 import com.ztemt.test.basic.item.BoardInfoTest;
-import com.ztemt.test.basic.item.CameraTest;
-import com.ztemt.test.basic.item.ChargerTest;
-import com.ztemt.test.basic.item.CompassTest;
-import com.ztemt.test.basic.item.EarphoneTest;
 import com.ztemt.test.basic.item.EarphoneTest2;
-import com.ztemt.test.basic.item.FlashlightTest;
-import com.ztemt.test.basic.item.FmRadioTest;
 import com.ztemt.test.basic.item.GSensorTest;
 import com.ztemt.test.basic.item.GyroSensorTest;
 import com.ztemt.test.basic.item.KeyTest;
 import com.ztemt.test.basic.item.LCDTest;
+import com.ztemt.test.basic.item.LightSensorCM32181Test;
 import com.ztemt.test.basic.item.LightSensorTest;
 import com.ztemt.test.basic.item.LoopbackTest;
-import com.ztemt.test.basic.item.MicrophoneTest;
-import com.ztemt.test.basic.item.NfcTest;
-import com.ztemt.test.basic.item.ProxSensorTest;
-import com.ztemt.test.basic.item.ReceiverTest;
 import com.ztemt.test.basic.item.SpeakerTest;
-import com.ztemt.test.basic.item.StorageTest;
 import com.ztemt.test.basic.item.TouchTest;
 import com.ztemt.test.basic.item.UnknownTest;
 import com.ztemt.test.basic.item.VersionTest;
-import com.ztemt.test.basic.item.VibratorTest;
 
-public class TestList {
+    public class TestList {
 
     // Add new test item here
     private static final BaseTest[] ALL_ITEMS = {
@@ -50,13 +39,22 @@ public class TestList {
         //耳机测试
         //new EarphoneTest(), //带Mic的四段式耳机回环测试
         new EarphoneTest2(), //普通耳机测试
+        // MIC回环测试
+        new LoopbackTest(),
         //FM收音机
         //new FmRadioTest(),
         //按键测试
         new KeyTest(),
-/*
         //震动测试
         //new VibratorTest(),
+        //传感器测试
+        //G-Sensor
+        new GSensorTest(),
+        //Gyroscope
+        new GyroSensorTest(),
+        //LightSensor IIO Sensor CM32181
+        new LightSensorCM32181Test(),
+/*
         //存储卡
         new StorageTest(),
         //相机
@@ -67,20 +65,15 @@ public class TestList {
         new CompassTest(),
         //充电
         new ChargerTest(),
-        //MIC回环
-        new LoopbackTest(),
+
         //MIC气密性测试
         //new MicrophoneTest(),
-        //G-Sensor
-        new GSensorTest(),
         //P-Sensor
         //new ProxSensorTest(),
-        //L-Sensor
-        new LightSensorTest(),
         //NFC
         //new NfcTest(),
-        //Gyroscope
-        new GyroSensorTest(),
+        //L-Sensor
+        new LightSensorTest(),
 */
     };
 
