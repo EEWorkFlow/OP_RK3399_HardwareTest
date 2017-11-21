@@ -186,4 +186,12 @@
     <color  name="gray">#d3d3d3</color><!-- 亮灰色 -->
     <color  name="red">#ff0000 </color><!-- 红色 -->
     <color  name="green">#00ff7f </color><!-- 红色 -->
+
+    <!-- wifi test -->
+    <string name="wifi_title">"Wifi测试"</string>
+    <string name="check_wifi_desc">"检查 Wifi 情况"</string>
+    <string name="open_wifi_desc">"打开 Wifi 开关"</string>
+    <string name="close_wifi_desc">"关闭 Wifi 开关"</string>
+    <string name="scan_wifi_desc">"扫描 Wifi 信号"</string>
+
 </resources>

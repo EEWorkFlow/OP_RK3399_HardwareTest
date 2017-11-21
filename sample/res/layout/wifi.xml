@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/check_wifi_desc"
+        android:id="@+id/check_wifi"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/open_wifi_desc"
+        android:id="@+id/open_wifi"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/close_wifi_desc"
+        android:id="@+id/close_wifi"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/scan_wifi_desc"
+        android:id="@+id/scan_wifi"
+        android:layout_gravity="center_horizontal" />
+    <TextView
+        android:id="@+id/wifi_desc"
+        android:text="Wifi 描述信息"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wifi_list"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

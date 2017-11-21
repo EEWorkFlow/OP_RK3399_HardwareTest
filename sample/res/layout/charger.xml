@@ -6,4 +6,4 @@
     android:layout_margin="45dip"
     android:gravity="center_vertical|center_horizontal"
     android:text="@string/charger_plug_in"
-    android:textAppearance="?android:attr/textAppearance" />
+    android:textAppearance="?android:attr/textAppearanceLarge" />

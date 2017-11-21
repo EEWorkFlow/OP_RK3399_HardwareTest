@@ -5,14 +5,15 @@ import android.content.Context;
 import com.ztemt.test.basic.item.BacklightTest;
 import com.ztemt.test.basic.item.BaseTest;
 import com.ztemt.test.basic.item.BoardInfoTest;
+import com.ztemt.test.basic.item.ChargerTest;
 import com.ztemt.test.basic.item.EarphoneTest2;
+import com.ztemt.test.basic.item.EthernetTest;
 import com.ztemt.test.basic.item.GSensorTest;
 import com.ztemt.test.basic.item.GyroSensorTest;
 import com.ztemt.test.basic.item.HallSensorTest;
 import com.ztemt.test.basic.item.KeyTest;
 import com.ztemt.test.basic.item.LCDTest;
 import com.ztemt.test.basic.item.LightSensorCM32181Test;
-import com.ztemt.test.basic.item.LightSensorTest;
 import com.ztemt.test.basic.item.LoopbackTest;
 import com.ztemt.test.basic.item.SpeakerTest;
 import com.ztemt.test.basic.item.TouchTest;
@@ -57,6 +58,10 @@ import com.ztemt.test.basic.item.VersionTest;
         new LightSensorCM32181Test(),
         // Hall Sensor
         new HallSensorTest(),
+        // 充电
+        new ChargerTest(),
+        // 以太网测试
+        new EthernetTest(),
 /*
         //存储卡
         new StorageTest(),
@@ -66,9 +71,8 @@ import com.ztemt.test.basic.item.VersionTest;
         //new FlashlightTest(),
         //罗盘
         new CompassTest(),
-        //充电
-        new ChargerTest(),
-
+        // Wifi 测试
+        // new WifiTest(),
         //MIC气密性测试
         //new MicrophoneTest(),
         //P-Sensor
