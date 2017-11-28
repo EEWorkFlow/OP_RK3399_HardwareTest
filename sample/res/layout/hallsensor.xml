@@ -12,7 +12,7 @@
 
     <ImageView
         android:id="@+id/hallsensor_iv"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="300dp"
         android:background="@drawable/hallsensor"
         android:layout_gravity="center"

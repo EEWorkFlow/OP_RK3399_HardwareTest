@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.ztemt.test.basic.R;
 
 public class CameraTest extends BaseTest {
 
+    private static final String TAG="CameraTest";
     private static final String IMG_NAME = "test.jpg";
     private static final String EXTRAS_CAMERA_FACING = "android.intent.extras.CAMERA_FACING";
     private static final int REQUEST_CAPTURE_IMAGE = 1;
@@ -36,6 +38,7 @@ public class CameraTest extends BaseTest {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK
                 && mCameraId < Camera.getNumberOfCameras() - 1) {
+            Log.v(CameraTest.TAG,"mCameraId"+mCameraId+" ");
             mCameraId++;
             captureImage();
         } else {
@@ -54,7 +57,7 @@ public class CameraTest extends BaseTest {
 
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        mCameraId = 0;
+        mCameraId = 1;
         captureImage();
         return true;
     }
@@ -66,10 +69,11 @@ public class CameraTest extends BaseTest {
 
     @Override
     public boolean isNeedTest() {
-        PackageManager pm = getContext().getPackageManager();
-        boolean hasCamera = pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)
-                || pm.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT);
-        return hasCamera && getSystemProperties("camera", true);
+        return true;
+//        PackageManager pm = getContext().getPackageManager();
+//        boolean hasCamera = pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)
+//                || pm.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT);
+//        return hasCamera && getSystemProperties("camera", true);
     }
 
     private void captureImage() {

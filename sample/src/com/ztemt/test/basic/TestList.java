@@ -5,6 +5,7 @@ import android.content.Context;
 import com.ztemt.test.basic.item.BacklightTest;
 import com.ztemt.test.basic.item.BaseTest;
 import com.ztemt.test.basic.item.BoardInfoTest;
+import com.ztemt.test.basic.item.CameraTest;
 import com.ztemt.test.basic.item.ChargerTest;
 import com.ztemt.test.basic.item.EarphoneTest2;
 import com.ztemt.test.basic.item.EthernetTest;
@@ -62,11 +63,14 @@ import com.ztemt.test.basic.item.VersionTest;
         new ChargerTest(),
         // 以太网测试
         new EthernetTest(),
-/*
-        //存储卡
-        new StorageTest(),
         //相机
         new CameraTest(),
+/*
+        // Sd 卡测试
+        new SdCardTest(),
+        //存储卡
+        new StorageTest(),
+
         //闪光灯
         //new FlashlightTest(),
         //罗盘

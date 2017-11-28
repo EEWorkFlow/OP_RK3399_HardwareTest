@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/lightsensorcm32181"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:textSize="60px"
         android:layout_weight="1"
         android:text="@string/lightsensorcm32181_light_desc"
@@ -16,7 +16,7 @@
     <TextView
         android:id="@+id/lightsensorcm32181_tv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/lightsensorcm32181_failed"
         android:textSize="60px"
@@ -25,16 +25,17 @@
     <TextView
         android:id="@+id/lightsensorcm32181_note"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/lightsensorcm32181_note"
         android:textSize="40px" />
 
     <ImageView
         android:id="@+id/lightsensorcm32181_iv"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
         android:background="@drawable/lightsensorcm32181"
+        android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:scaleType="fitXY" />
 
