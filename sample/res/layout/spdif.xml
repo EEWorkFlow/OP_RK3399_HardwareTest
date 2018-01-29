@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lightsensorcm32181_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/spdif_desc"
+        android:textSize="40px" />
+
+    <ImageView
+        android:id="@+id/lightsensorcm32181_iv"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:background="@drawable/spdifhardware"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+</LinearLayout>

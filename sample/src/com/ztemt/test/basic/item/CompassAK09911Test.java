@@ -1,13 +1,8 @@
 package com.ztemt.test.basic.item;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,52 +11,34 @@ import android.widget.TextView;
 import com.ztemt.test.basic.R;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 
 /**
- * Created by younix on 17-11-16.
- * 仅适用于 OrangePi RK3399 的 CM32181 Light Sensor
+ * Created by younix on 18-1-9.
  */
+public class CompassAK09911Test extends BaseTest {
+    final String compass_ak09911_x_raw = "/sys/bus/iio/devices/iio:device3/in_magn_x_raw";
+    final String compass_ak09911_y_raw = "/sys/bus/iio/devices/iio:device3/in_magn_y_raw";
+    final String compass_ak09911_z_raw = "/sys/bus/iio/devices/iio:device3/in_magn_z_raw";
+    private String compass_ak09911_x = "";
+    private String compass_ak09911_y = "";
+    private String compass_ak09911_z = "";
+    private TextView tv_ak09911_x = null;
+    private TextView tv_ak09911_y = null;
+    private TextView tv_ak09911_z = null;
 
-public class LightSensorCM32181Test extends BaseTest {
-
-    private static final String TAG = "LightSensorCM32181Test";
-    private TextView tv_LightSensor = null;
-    private String s_LightSensor = "WATING";
     private static final int msgKey1 = 1;
-    final String light_path1 = "/sys/bus/iio/devices/iio:device1/name"; // Light Sensor 节点 in_illuminance_input
-    final String light_path2 = "/sys/bus/iio/devices/iio:device2/name"; // Light Sensor 节点 in_illuminance_input
-    final String light_path_node1 = "/sys/bus/iio/devices/iio:device1/in_illuminance_input"; // Light Sensor 节点 in_illuminance_input
-    final String light_path_node2 = "/sys/bus/iio/devices/iio:device2/in_illuminance_input"; // Light Sensor 节点 in_illuminance_input
-    private String light_path = "/sys/bus/iio/devices/iio:device";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.lightsensorcm32181,container, false);
-        findSensor();
-        tv_LightSensor = (TextView) v.findViewById(R.id.lightsensorcm32181_tv);
-
-        new TimeThread().start();
-
+        View v = inflater.inflate(R.layout.compass_ak09911,container,false);
+        tv_ak09911_x = (TextView) v.findViewById(R.id.compass_ak09911_x);
+        tv_ak09911_y = (TextView) v.findViewById(R.id.compass_ak09911_y);
+        tv_ak09911_z = (TextView) v.findViewById(R.id.compass_ak09911_z);
+        new compassTimeThread().start();
         return v;
     }
-
-    private void findSensor() {
-        if(getDeviceNode(light_path1).equals("cm32181")) {
-            light_path = light_path_node1;
-            Log.v(TAG,light_path);
-        }
-        else if(getDeviceNode(light_path2).equals("cm32181")) {
-            light_path = light_path_node2;
-            Log.v(TAG, light_path);
-        }
-        else
-            light_path = null;
-    }
-
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -72,16 +49,6 @@ public class LightSensorCM32181Test extends BaseTest {
     @Override
     public void onDestroy() {
         super.onDestroy();
-    }
-
-    @Override
-    public String getTestName() {
-        return getContext().getString(R.string.lightsensorcm32181_title);
-    }
-
-    @Override
-    public boolean isNeedTest() {
-        return true;
     }
 
     public static String getDeviceNode(String path){
@@ -104,7 +71,7 @@ public class LightSensorCM32181Test extends BaseTest {
         return prop;
     }
 
-    public class TimeThread extends Thread {
+    public class compassTimeThread extends Thread {
         @Override
         public void run() {
             super.run();
@@ -128,13 +95,26 @@ public class LightSensorCM32181Test extends BaseTest {
             super.handleMessage(msg);
             switch (msg.what){
                 case msgKey1:
-                    s_LightSensor = getDeviceNode(light_path);
-                    tv_LightSensor.setText(s_LightSensor+"");
+                    compass_ak09911_x = getDeviceNode(compass_ak09911_x_raw);
+                    tv_ak09911_x.setText(compass_ak09911_x);
+                    compass_ak09911_y = getDeviceNode(compass_ak09911_y_raw);
+                    tv_ak09911_y.setText(compass_ak09911_y);
+                    compass_ak09911_z = getDeviceNode(compass_ak09911_z_raw);
+                    tv_ak09911_z.setText(compass_ak09911_z);
                     break;
                 default:
                     break;
             }
         }
     };
-}
 
+    @Override
+    public String getTestName() {
+        return "电子罗盘测试";
+    }
+
+    @Override
+    public boolean isNeedTest() {
+        return true;
+    }
+}

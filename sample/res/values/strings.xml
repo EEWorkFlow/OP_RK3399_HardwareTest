@@ -47,7 +47,11 @@
 
     <!-- speaker -->
     <string name="speaker_title">"喇叭测试"</string>
-    <string name="speaker_desc">"测试时请断开 耳机、SPDIF、HDMI 的连接。接上喇叭，点击屏幕或鼠标左键，确认喇叭是否有声音。测试完毕后请选择通过或者失败。"</string>
+    <string name="speaker_desc">"测试时请断开 耳机 的连接。接上喇叭，点击屏幕或鼠标左键，确认喇叭是否有声音。测试完毕后请选择通过或者失败。"</string>
+
+    <!-- spdif -->
+    <string name="spdif_title">"SPDIF 测试"</string>
+    <string name="spdif_desc">"请按照下图连接好 SPDIF 信号线，点击屏幕或鼠标左键，确定最终的设备是否有声音。测试完毕后请选择通过或者失败。"</string>
 
     <!-- earphone -->
     <string name="earphone_title">"耳机测试"</string>
@@ -56,7 +60,7 @@
 
     <!-- earphone2 -->
     <string name="earphone2_title">"耳机测试"</string>
-    <string name="earphone2_desc">"测试时请断开 喇叭、SPDIF、HDMI 的连接。插入耳机，点击屏幕或鼠标左键，确认耳机是否有声音。测试完毕后请选择通过或者失败。"</string>
+    <string name="earphone2_desc">"测试时请断开 喇叭 的连接。插入耳机，点击屏幕或鼠标左键，确认耳机是否有声音。测试完毕后请选择通过或者失败。"</string>
 
     <!-- fmradio -->
     <string name="fmradio_title">"收音机测试"</string>
@@ -105,7 +109,7 @@
 
     <!-- loopback -->
     <string name="loopback_title">"麦克风回环测试"</string>
-    <string name="loopback_desc">"请对准麦克风大声说话或吹气，检查听筒是否有声音传出，点击屏幕后开始"</string>
+    <string name="loopback_desc">"请在5秒内对准麦克风大声说话或吹气，检查听筒是否有声音传出，点击屏幕后开始"</string>
 
     <!-- microphone -->
     <string name="microphone_title">"麦克风气密性测试"</string>

@@ -37,6 +37,9 @@ public class TestListActivity extends ListActivity implements OnCheckedChangeLis
 
         mAdapter = new TestListAdapter(this);
         setListAdapter(mAdapter);
+
+        SharedPreferences sp = getSharedPreferences(PREFS, MODE_PRIVATE);
+        sp.edit().putBoolean(KEY_SINGLE_MODE, false).commit();
     }
 
     @Override
@@ -65,7 +68,7 @@ public class TestListActivity extends ListActivity implements OnCheckedChangeLis
 
         SharedPreferences sp = getSharedPreferences(PREFS, MODE_PRIVATE);
         CheckBox cb = (CheckBox) v.findViewById(R.id.single_mode);
-        cb.setChecked(sp.getBoolean(KEY_SINGLE_MODE, true));
+//        cb.setChecked(sp.getBoolean(KEY_SINGLE_MODE, true));
         cb.setOnCheckedChangeListener(this);
 
         LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);

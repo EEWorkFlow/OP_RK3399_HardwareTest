@@ -16,7 +16,7 @@ import com.ztemt.test.basic.R;
 public class LoopbackTest extends ReceiverTest {
 
     private static final String TAG = "LoopbackTest";
-    private static final int MSG_DELAY_TIME = 10000;
+    private static final int MSG_DELAY_TIME = 5000;
 
     private Loopback mLoopback;
 

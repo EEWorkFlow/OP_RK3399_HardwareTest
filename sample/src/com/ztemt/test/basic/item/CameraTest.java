@@ -30,20 +30,22 @@ public class CameraTest extends BaseTest {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+        Log.e(TAG,"onCreateView: We all have "+Camera.getNumberOfCameras() + "cameras ");
         View v = inflater.inflate(R.layout.camera, container, false);
         return v;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.v(TAG,"onActivityResult: Camera"+ mCameraId+" is checked.");
         if (resultCode == Activity.RESULT_OK
                 && mCameraId < Camera.getNumberOfCameras() - 1) {
-            Log.v(CameraTest.TAG,"mCameraId"+mCameraId+" ");
             mCameraId++;
             captureImage();
         } else {
             setButtonVisibility(true);
         }
+
     }
 
     @Override
@@ -53,11 +55,15 @@ public class CameraTest extends BaseTest {
         // Delete image file in storage
         File file = new File(Environment.getExternalStorageDirectory(), IMG_NAME);
         file.delete();
+        mCameraId = 0;
+        Log.v(TAG,"onDestroy(): set mCameraId = 0.");
     }
 
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        mCameraId = 1;
+        //mCameraId = 0;
+        Log.v(TAG,"onSingleTapConfirmed: Single Tap.");
+        Log.v(TAG,"onSingleTapConfirmed: We totally have "+Camera.getNumberOfCameras() + " cameras。");
         captureImage();
         return true;
     }
@@ -69,11 +75,10 @@ public class CameraTest extends BaseTest {
 
     @Override
     public boolean isNeedTest() {
-        return true;
-//        PackageManager pm = getContext().getPackageManager();
-//        boolean hasCamera = pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)
-//                || pm.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT);
-//        return hasCamera && getSystemProperties("camera", true);
+        PackageManager pm = getContext().getPackageManager();
+        boolean hasCamera = pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)
+                || pm.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT);
+        return hasCamera && getSystemProperties("camera", true);
     }
 
     private void captureImage() {
@@ -83,8 +88,8 @@ public class CameraTest extends BaseTest {
         // Wrap capture intent
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        Log.v(TAG,"captureImage: Now is No."+mCameraId+ " camera.");
         intent.putExtra(EXTRAS_CAMERA_FACING, mCameraId);
-
         startActivityForResult(intent, REQUEST_CAPTURE_IMAGE);
     }
 }

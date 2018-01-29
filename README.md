@@ -54,13 +54,3 @@ private static final BaseTest[] ALL_ITEMS = {
         new GyroSensorTest(),
 };
 ```
-
-针对于 OrangePi RK3399 ，添加修改了如下功能
-```java
-private static final BaseTest[] ALL_ITEMS = {
-        //硬件信息获取，ROM RAM
-        new BoardInfoTest(),
-        //三段式耳机测试
-        new EarphoneTest2(),
-}
-```

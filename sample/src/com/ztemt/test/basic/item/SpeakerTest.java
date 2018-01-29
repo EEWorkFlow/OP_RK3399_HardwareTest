@@ -1,11 +1,13 @@
 package com.ztemt.test.basic.item;
 
 import java.io.File;
+import java.io.IOException;
 
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -47,11 +49,14 @@ public class SpeakerTest extends BaseTest implements OnPreparedListener {
         case MSG_START:
             setTimerTask(MSG_END, MSG_DELAY_TIME);
             setButtonVisibility(false);
-            playMusic(R.raw.play);
+            try {
+                setSpkOn();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             break;
         case MSG_END:
             setButtonVisibility(true);
-            stopMusic();
             break;
         }
     }
@@ -70,6 +75,11 @@ public class SpeakerTest extends BaseTest implements OnPreparedListener {
     @Override
     public boolean isNeedTest() {
         return getSystemProperties("speaker", true);
+    }
+
+    private void setSpkOn() throws IOException {
+        SystemProperties.set("ctl.start","alctest");
+        Log.v(TAG, "Call System Service 'alctest' in init.rc to test Audio Speaker.");
     }
 
     protected void playMusic(int resId) {

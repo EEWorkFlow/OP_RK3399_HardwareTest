@@ -1,21 +1,21 @@
-    package com.ztemt.test.basic;
+package com.ztemt.test.basic;
 
 import android.content.Context;
 
 import com.ztemt.test.basic.item.BacklightTest;
 import com.ztemt.test.basic.item.BaseTest;
 import com.ztemt.test.basic.item.BoardInfoTest;
-import com.ztemt.test.basic.item.CameraTest;
 import com.ztemt.test.basic.item.ChargerTest;
+import com.ztemt.test.basic.item.CompassAK09911Test;
 import com.ztemt.test.basic.item.EarphoneTest2;
 import com.ztemt.test.basic.item.EthernetTest;
 import com.ztemt.test.basic.item.GSensorTest;
-import com.ztemt.test.basic.item.GyroSensorTest;
 import com.ztemt.test.basic.item.HallSensorTest;
 import com.ztemt.test.basic.item.KeyTest;
 import com.ztemt.test.basic.item.LCDTest;
 import com.ztemt.test.basic.item.LightSensorCM32181Test;
 import com.ztemt.test.basic.item.LoopbackTest;
+import com.ztemt.test.basic.item.SpdifTest;
 import com.ztemt.test.basic.item.SpeakerTest;
 import com.ztemt.test.basic.item.TouchTest;
 import com.ztemt.test.basic.item.UnknownTest;
@@ -29,19 +29,13 @@ import com.ztemt.test.basic.item.VersionTest;
         new VersionTest(),
         //硬件测试
         new BoardInfoTest(),
-        //LCD屏幕测试
-        new LCDTest(),
-        //背光测试
-        new BacklightTest(),
-        //触摸屏
-        new TouchTest(),
-        //听筒测试
-        //new ReceiverTest(),
         //喇叭测试
         new SpeakerTest(),
         //耳机测试
         //new EarphoneTest(), //带Mic的四段式耳机回环测试
         new EarphoneTest2(), //普通耳机测试
+        // Spdif
+        new SpdifTest(),
         // MIC回环测试
         new LoopbackTest(),
         //FM收音机
@@ -51,10 +45,10 @@ import com.ztemt.test.basic.item.VersionTest;
         //震动测试
         //new VibratorTest(),
         //传感器测试
-        //G-Sensor
+        //重力加速度传感器
         new GSensorTest(),
-        //Gyroscope
-        new GyroSensorTest(),
+        //电子罗盘 AK09911
+        new CompassAK09911Test(),
         //LightSensor IIO Sensor CM32181
         new LightSensorCM32181Test(),
         // Hall Sensor
@@ -63,9 +57,22 @@ import com.ztemt.test.basic.item.VersionTest;
         new ChargerTest(),
         // 以太网测试
         new EthernetTest(),
-        //相机
-        new CameraTest(),
+
+        //LCD屏幕测试
+        new LCDTest(),
+        //背光测试
+        new BacklightTest(),
+        //触摸屏
+        new TouchTest(),
 /*
+        //听筒测试
+        //new ReceiverTest(),
+        //G-Sensor
+        new GSensorTest(),
+        //罗盘
+        new CompassTest(),
+        //相机
+        //new CameraTest(),
         // Sd 卡测试
         new SdCardTest(),
         //存储卡
@@ -73,10 +80,8 @@ import com.ztemt.test.basic.item.VersionTest;
 
         //闪光灯
         //new FlashlightTest(),
-        //罗盘
-        new CompassTest(),
-        // Wifi 测试
-        // new WifiTest(),
+
+
         //MIC气密性测试
         //new MicrophoneTest(),
         //P-Sensor
